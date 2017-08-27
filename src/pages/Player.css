@@ -60,3 +60,16 @@
   width: 60px;
   display: inline-block;
 }
+.container-player .spin{
+  animation: play 20s linear infinite;
+}
+.container-player .running{
+  animation-play-state: running;
+}
+.container-player .paused{
+  animation-play-state: paused;
+}
+@keyframes play{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}

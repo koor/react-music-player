@@ -4,7 +4,10 @@ import MusicListItem from '../components/MusicListItem'
 export default class MusicList extends Component {
   render() {
     let listEle = null
-    listEle = this.props.musicList.map((item) => <li key={item.id}>{item.title}</li>)
+    listEle = this.props.musicList.map((item) => <MusicListItem
+      key={item.id}
+      musicItem={item}
+      focus={item === this.props.currentMusicItem} >{item.title}</MusicListItem>)
 
     return (
       <ul>
