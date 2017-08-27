@@ -54,11 +54,11 @@ export default class Player extends Component {
   }
 
   playPrev() {
-    Pubsub.subscribe('PLAY_PREV')
+    Pubsub.publish('PLAY_PREV')
   }
 
   playNext() {
-    Pubsub.subscribe('PLAY_NEXT')
+    Pubsub.publish('PLAY_NEXT')
   }
 
   changeCycleModel() {
