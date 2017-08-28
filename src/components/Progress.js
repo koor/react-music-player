@@ -9,7 +9,6 @@ export default class Progress extends Component {
   changeProgress(e) {
     let progressBar = this.progressBar
     let progress = (e.pageX - progressBar.getBoundingClientRect().left) / progressBar.clientWidth
-    // console.log(progress)
     this.props.onProgressChange && this.props.onProgressChange(progress)
   }
 

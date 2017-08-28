@@ -34,12 +34,10 @@ export default class Player extends Component {
   }
 
   handleOnProgressChange(progress) {
-    // console.log(`form root: ${progress}`)
     $('#player').jPlayer(this.state.isPlay ? 'play' : 'pause', duration * progress)
   }
 
   handleOnVolumeChange(progress) {
-    // console.log(`form root: ${progress}`)
     $('#player').jPlayer('volume', progress)
     this.setState({
       volume: progress * 100

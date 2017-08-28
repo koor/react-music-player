@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Pubsub from 'pubsub-js'
 import $ from 'jquery'
 import 'jplayer'
+import '../static/css/reset.css'
+import '../static/css/common.css'
 import Header from './Header'
 import Player from '../pages/Player'
 import MusicList from '../pages/MusicList'
@@ -102,7 +104,7 @@ export default class Root extends Component {
         newIndex = index
         break
       case 'random':
-        newIndex = Math.round(Math.random() * musicListLength)
+        newIndex = Math.floor(Math.random() * musicListLength)
         break
       case 'prev':
         newIndex = (index - 1 + musicListLength) % musicListLength
