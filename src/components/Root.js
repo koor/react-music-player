@@ -41,7 +41,7 @@ export default class Root extends Component {
           this.playNext('random')
           break
         default:
-          
+
       }
     })
 
@@ -56,7 +56,7 @@ export default class Root extends Component {
       this.setState({
         musicList: this.state.musicList.filter(item => musicItem !== item)
       })
-      this.playNext('next')
+      if (this.state.currentMusicItem === musicItem) this.playNext('next')
     })
 
     Pubsub.subscribe('PLAY_PREV', (msg, musicItem) => {
@@ -105,6 +105,12 @@ export default class Root extends Component {
         break
       case 'random':
         newIndex = Math.floor(Math.random() * musicListLength)
+        if (musicListLength > 1) {
+          if (newIndex === index) {
+            this.playNext('random')
+            return
+          }
+        }
         break
       case 'prev':
         newIndex = (index - 1 + musicListLength) % musicListLength
