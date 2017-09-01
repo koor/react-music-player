@@ -1,7 +1,5 @@
-## react-music-player
+# react-music-player
 使用 React 构建的一个简单的音乐播放器。
-
------------------
 
 ### 技术栈
  - create-react-app 脚手架
